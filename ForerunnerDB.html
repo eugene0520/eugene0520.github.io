@@ -15,8 +15,7 @@
         }
       }
       studentCollection = db.collection('Students');
-      studentCollection.load();
-      studentCollection.save();
+      studentCollection.load(function(){studentCollection.save()});
     </script>
   </body>  
 </html>  
