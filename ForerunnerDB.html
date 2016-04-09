@@ -10,11 +10,11 @@
       var studentName =[Eugene,Kevin,Arthur,Aaron,Evan,Eunice,Wendy,Candy,Tom,Annie];
       for(var i=0;i<10;i++){
         var newStudents = {
-          name: studentName[Math.floor((Math.random() * 10) + 1)]
+          name: studentName[i]
           age: Math.floor((Math.random() * 18) + 1);
         }
       }
-      studentCollection = db.collection('newStudents');
+      studentCollection = db.collection('Students');
       studentCollection.load();
     </script>
   </body>  
