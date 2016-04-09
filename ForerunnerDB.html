@@ -1,9 +1,17 @@
 <!DOCTYPE>
 <html>
   <head>
-      
+    <link rel="stylesheet" type="text/css" href="fdb-all.min.js" />  
   </head>  
   <body>
-    
+    <script>
+      var fdb = new forerunnerDB();
+      var db = fdb.db(studentCollection);
+      var newStudent = {
+        name: "Koding",
+        age: 18
+      };
+      studentCollection.insert(newStudent);
+    </script>
   </body>  
 </html>  
