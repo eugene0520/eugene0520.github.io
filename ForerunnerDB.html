@@ -12,7 +12,7 @@
         var newStudent = {
           name: studentName[i],
           age:  Math.floor((Math.random() * 18) + 1)
-        }
+        };
         studentCollection.insert(newStudent);
       }
       studentCollection = db.collection('students');
