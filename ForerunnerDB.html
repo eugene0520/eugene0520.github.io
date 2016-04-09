@@ -13,6 +13,7 @@
           name: studentName[i],
           age:  Math.floor((Math.random() * 18) + 1)
         }
+        studentCollection.insert(newStudent);
       }
       studentCollection = db.collection('Students');
       studentCollection.load(function(){studentCollection.save()});
