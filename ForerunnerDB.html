@@ -7,13 +7,14 @@
     <script>
       var fdb = new ForerunnerDB();
       var db = fdb.db("my_db");
-      var newStudent = {
-        name: "Eugene",
-        age: 11
-      };
-      studentCollection = db.collection('students');
+      var studentName =[Eugene,Kevin,Arthur,Aaron,Evan,Eunice,Wendy,Candy,Tom,Annie]
+      for(var i=0;i<10;i++){
+        var newStudents =
+        name:studentName[Math.floor((Math.random() * 10) + 1)];
+        age:Math.floor((Math.random() * 18) + 1);
+      }
+      studentCollection = db.collection('newStudents');
       studentCollection.load();
-      studentCollection.save();
     </script>
   </body>  
 </html>  
