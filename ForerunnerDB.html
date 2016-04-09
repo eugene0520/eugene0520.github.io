@@ -9,13 +9,13 @@
       var db = fdb.db("my_db");
       var studentName =["Eugene","Kevin","Arthur","Aaron","Evan","Eunice","Wendy","Candy","Tom","Annie"];
       for(var i=0;i<10;i++){
-        var newStudents = {
+        var newStudent = {
           name: studentName[i],
           age:  Math.floor((Math.random() * 18) + 1)
         }
         studentCollection.insert(newStudent);
       }
-      studentCollection = db.collection('Students');
+      studentCollection = db.collection('students');
       studentCollection.load(function(){studentCollection.save()});
     </script>
   </body>  
