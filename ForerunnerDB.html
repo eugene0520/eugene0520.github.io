@@ -42,6 +42,21 @@
             age:  Math.floor((Math.random() * 18) + 1)
           };
           studentCollection.insert(newStudent);
+          $("tbody").append(
+          "<tr>"+
+          "<td>"+newStudent.name+"</td>"+  
+          "<td>"+newStudent.age+"</td>"+  
+          "<td>"+newStudent.id+"</td>"+ 
+          "<td>"+
+          "<button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModalN1'>"+
+          "修改"+
+          "</button>"+
+          "<button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModalN2'>"+
+          "刪除"+
+           "</button>"+
+           "</td>"+
+           
+            )
         }         
         studentCollection.save() 
       });
