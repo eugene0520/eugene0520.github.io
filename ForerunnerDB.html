@@ -25,7 +25,8 @@
       var studentCollection = db.collection('students');
       studentCollection.load(function(){
         var studentName =["Eugene","Kevin","Arthur","Aaron","Evan","Eunice","Wendy","Candy","Tom","Annie"];
-        for(var i=0;i<studentCollection.find().length;i++){
+        var sudents = studentCollection.find();
+        for(var i=0;i<sudents.length;i++){
           // var newStudent = {
           //   name: studentName[i],
           //   age:  Math.floor((Math.random() * 30) + 10)
@@ -34,8 +35,8 @@
           // studentCollection.save() 
           $("tbody").append(
           "<tr>"+
-          "<td>"+newStudent.name+"</td>"+  
-          "<td>"+newStudent.age+"</td>"+  
+          "<td>"+sudents[i].name+"</td>"+  
+          "<td>"+sudents[i].age+"</td>"+  
           "<td>"+
           "<button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModalN1'>"+
           "修改"+
