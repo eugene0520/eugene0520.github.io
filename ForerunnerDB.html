@@ -4,6 +4,20 @@
     <script src="fdb-all.min.js"></script>  
   </head>  
   <body>
+  <table>
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>name</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>eugene</td>
+            </tr>
+        </tbody>
+    </table>
     <script>
       var fdb = new ForerunnerDB();
       var db = fdb.db("my_db");
@@ -20,19 +34,5 @@
         studentCollection.save() 
       });
     </script>
-  <table>
-        <thead>
-            <tr>
-                <td>id</td>
-                <td>姓名</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Orange</td>
-            </tr>
-        </tbody>
-    </table>
   </body>  
 </html>  
