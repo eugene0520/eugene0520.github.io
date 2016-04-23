@@ -25,7 +25,7 @@
       var studentCollection = db.collection('students');
       studentCollection.load(function(){
         var studentName =["Eugene","Kevin","Arthur","Aaron","Evan","Eunice","Wendy","Candy","Tom","Annie"];
-        for(var i=0;i<studentCollection.find().lenght;i++){
+        for(var i=0;i<studentCollection.find().length;i++){
           var newStudent = {
             name: studentName[i],
             age:  Math.floor((Math.random() * 30) + 10)
