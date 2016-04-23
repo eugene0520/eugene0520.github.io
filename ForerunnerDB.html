@@ -12,21 +12,13 @@
             <tr>
                 <td>id</td>
                 <td>name</td>
+                <td>age</td>
                 <td>操作</td>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>1</td>
-                <td>eugene</td>
-                <td>
-                  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalN1">
-                    修改
-                  </button>
-                  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalN2">
-                    刪除
-                  </button>                
-                </td>
+
             </tr>
         </tbody>
     </table>
@@ -44,9 +36,9 @@
           studentCollection.insert(newStudent);
           $("tbody").append(
           "<tr>"+
+          "<td>"+newStudent.id+"</td>"+
           "<td>"+newStudent.name+"</td>"+  
           "<td>"+newStudent.age+"</td>"+  
-          "<td>"+newStudent.id+"</td>"+ 
           "<td>"+
           "<button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModalN1'>"+
           "修改"+
