@@ -56,12 +56,11 @@
         studentCollection.remove({  
           _id:$(this).data("id")
         });
-        studentCollection.load(function(){
-          studentCollection.save();          
-        })
+          studentCollection.save();
+          studentCollection.load();
       })
     </script>
-    <!-- Modal 1 -->
+    <!-- Modal -->
     <div class="modal fade" id="myModalN1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
        <div class="modal-content">
