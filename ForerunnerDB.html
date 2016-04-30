@@ -53,8 +53,9 @@
         });
       
       $("body").on("click",".delete-button",function(){
-        alert("WHYYYYYYYY");
-        
+        collection.remove({
+          _id: this.data-id
+        });
       })
     </script>
     <!-- Modal 1 -->
