@@ -53,10 +53,10 @@
         });
       
       $("body").on("click",".delete-button",function(){
-        students.remove({  
+        collection.remove({  
           _id:$(this).data("id")
         });
-        studentCollection.save();
+        //studentCollection.save();
       })
     </script>
     <!-- Modal 1 -->
