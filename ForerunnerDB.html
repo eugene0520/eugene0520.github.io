@@ -35,7 +35,7 @@
           // studentCollection.save() 
           $("tbody").append(
           "<tr>"+
-          "<td>"+sudents[i].name+"</td>"+  
+          "<td id ='"+ id=i+"'>"+sudents[i].name+"</td>"+  
           "<td>"+sudents[i].age+"</td>"+  
           "<td>"+
           "<button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModalN1'>"+
@@ -49,6 +49,10 @@
             )
         }         
       });
+      function remove(){
+        
+        
+      }
     </script>
     <!-- Modal 1 -->
     <div class="modal fade" id="myModalN1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -61,7 +65,7 @@
           <div class="modal-body">
             <p>Name:</p>
             <br>
-            <input type="text"></input>
+            <input type="text" />
             <br><br>
             <p>age:</p>
             <br>
@@ -86,8 +90,7 @@
             <h3>Are you sure?</h3>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Yes</button>
-            <button type="button" class="btn btn-primary">No</button>
+            <button onclick = "remove()">yes</button>
           </div>
         </div>
       </div>
