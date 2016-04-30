@@ -40,10 +40,10 @@
           "<td id ='age"+i+"'>"+sudents[i].age+"</td>"+
           "<td id ='id"+i+"'>"+i+"</td>"+
           "<td>"+
-          "<button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModalN1'>"+
+          "<button type='button' id='edit-button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModalN1'>"+
           "修改"+
           "</button>"+
-          "<button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModalN2' id='"+i+"'>"+
+          "<button type='button' class='btn btn-primary btn-lg delete-button'>"+
           "刪除"+
            "</button>"+
            "</td>"+
@@ -51,11 +51,11 @@
             )
         }         
       });
-      function remove(){
-        collection.remove({
-          id:$(#id[this.id]) 
-        });
       }
+      $("body").on("click",".delete-button",function(){
+        alert("嗚嗚，不要刪掉我");
+        
+      })
     </script>
     <!-- Modal 1 -->
     <div class="modal fade" id="myModalN1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -68,32 +68,15 @@
           <div class="modal-body">
             <p>Name:</p>
             <br>
-            <input type="text" val=/>
+            <input type="text" val= />
             <br><br>
             <p>age:</p>
             <br>
-            <input type="text" />
+            <input type="text" val= />
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Modal 2 -->
-    <div class="modal fade" id="myModalN2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-       <div class="modal-content">
-          <div class="modal-header">
-           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-           <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-          </div>
-          <div class="modal-body">
-            <h3>Are you sure?</h3>
-          </div>
-          <div class="modal-footer">
-            <button onclick = "remove()">yes</button>
           </div>
         </div>
       </div>
