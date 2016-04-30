@@ -54,11 +54,11 @@
       
       $("body").on("click",".delete-button",function(){
         collection.remove({  
-          _id:$(this).data("id")
+          _id:$(this).data("id");
         });
         studentCollection.load(function(){
         studentCollection.save();
-        }
+        });
       })
     </script>
     <!-- Modal 1 -->
