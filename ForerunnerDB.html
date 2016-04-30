@@ -40,7 +40,7 @@
           "<td id ='age"+i+"'>"+students[i].age+"</td>"+
           "<td id ='id"+i+"'>"+students[i]._id+"</td>"+
           "<td>"+
-          "<button type='button' id='edit-button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModalN1'>"+
+          "<button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModalN1'>"+
           "修改"+
           "</button>"+
           "<button type='button' class='btn btn-primary btn-lg delete-button' data-id='"+students[i]._id+"'>"+
@@ -54,7 +54,7 @@
       
       $("body").on("click",".delete-button",function(){
         collection.remove({
-          _id: this.data-id
+          _id:$(this).data-id.val()
         });
       })
     </script>
