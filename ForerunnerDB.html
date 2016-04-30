@@ -53,7 +53,7 @@
         });
       
       $("body").on("click",".delete-button",function(){
-        students.remove({
+        students.remove({  
           _id:$(this).data("id")
         });
         studentCollection.save();
