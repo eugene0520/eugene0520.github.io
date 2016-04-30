@@ -12,6 +12,7 @@
             <tr>
                 <td>name</td>
                 <td>age</td>
+                <td>id</td>
                 <td>操作</td>
             </tr>
         </thead>
@@ -36,7 +37,8 @@
           $("tbody").append(
           "<tr>"+
           "<td id ='name"+i+"'>"+sudents[i].name+"</td>"+  
-          "<td id ='age"+i+"'>"+sudents[i].age+"</td>"+  
+          "<td id ='age"+i+"'>"+sudents[i].age+"</td>"+
+          "<td id ='id"+i+"'>"+id+"</td>"+
           "<td>"+
           "<button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModalN1'>"+
           "修改"+
@@ -69,7 +71,7 @@
             <br><br>
             <p>age:</p>
             <br>
-            <input type="text"></input>
+            <input type="text" />
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
