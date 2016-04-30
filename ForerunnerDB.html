@@ -56,7 +56,9 @@
         collection.remove({  
           _id:$(this).data("id")
         });
-        //studentCollection.save();
+        studentCollection.load(function(){
+        studentCollection.save();
+        }
       })
     </script>
     <!-- Modal 1 -->
