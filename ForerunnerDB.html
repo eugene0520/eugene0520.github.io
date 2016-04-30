@@ -38,9 +38,9 @@
           "<tr>"+
           "<td id ='name"+i+"'>"+sudents[i].name+"</td>"+  
           "<td id ='age"+i+"'>"+sudents[i].age+"</td>"+
-          "<td id ='id"+i+"'>"+ i++ +"</td>"+
+          "<td id ='id"+i+"'>"+i+"</td>"+
           "<td>"+
-          "<button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModalN1'>"+
+          "<button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModalN1' id="+i+">"+
           "修改"+
           "</button>"+
           "<button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModalN2'>"+
@@ -67,7 +67,7 @@
           <div class="modal-body">
             <p>Name:</p>
             <br>
-            <input type="text" />
+            <input type="text" val=/>
             <br><br>
             <p>age:</p>
             <br>
