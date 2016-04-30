@@ -40,7 +40,7 @@
           "<td id ='age"+i+"'>"+students[i].age+"</td>"+
           "<td id ='id"+i+"'>"+students[i]._id+"</td>"+
           "<td>"+
-          "<button type='button' class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModalN1'>"+
+          "<button type='button' class='btn btn-primary btn-lg edit-button' data-toggle='modal' data-target='#myModalN1'>"+
           "修改"+
           "</button>"+
           "<button type='button' class='btn btn-primary btn-lg delete-button' data-id='"+students[i]._id+"'>"+
@@ -57,8 +57,34 @@
           _id:$(this).data("id")
         });
           studentCollection.save();
-          studentCollection.load();
+          refresh();
       })
+      function refresh(){
+      $("tbody *").remove();
+      for(var i=0;i<students.length;i++){
+          // var newStudent = {
+          //   name: studentName[i],
+          //   age:  Math.floor((Math.random() * 30) + 10)
+          // };
+          // studentCollection.insert(newStudent);
+          // studentCollection.save() 
+          $("tbody").append(
+          "<tr>"+
+          "<td id ='name"+i+"'>"+students[i].name+"</td>"+  
+          "<td id ='age"+i+"'>"+students[i].age+"</td>"+
+          "<td id ='id"+i+"'>"+students[i]._id+"</td>"+
+          "<td>"+
+          "<button type='button' class='btn btn-primary btn-lg edit-button' data-toggle='modal' data-target='#myModalN1'>"+
+          "修改"+
+          "</button>"+
+          "<button type='button' class='btn btn-primary btn-lg delete-button' data-id='"+students[i]._id+"'>"+
+          "刪除"+
+           "</button>"+
+           "</td>"+
+           "</tr>"
+            )
+          }           
+      }
     </script>
     <!-- Modal -->
     <div class="modal fade" id="myModalN1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
