@@ -53,7 +53,7 @@
         	$("tbody *").remove();
          var students = studentCollection.find();
           for(var i=0;i<students.length;i++){
-            if(student[i].age>$(".find-input").val()){
+            if(students[i].age>$(".find-input").val()){
             $("tbody").append(
               "<tr>"+
               "<td id ='name"+i+"'>"+students[i].name+"</td>"+  
