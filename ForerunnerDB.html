@@ -73,7 +73,7 @@
               "<td id ='age"+i+"'>"+students[i].age+"</td>"+
               "<td id ='id"+i+"'>"+students[i]._id+"</td>"+
               "<td>"+
-              "<button type='button' id='"+i+"' class='btn btn-primary btn-lg edit-button' data-toggle='modal' data-target='#myModalN1'>"+
+              "<button type='button' class='btn btn-primary btn-lg edit-button' data-toggle='modal' data-target='#myModalN1'>"+
               "修改"+
               "</button>"+
               "<button type='button' class='btn btn-primary btn-lg delete-button' data-id='"+students[i]._id+"'>"+
@@ -96,11 +96,9 @@
           </div>
           <div class="modal-body">
             <p>Name:</p>
-            <br>
             <input type="text" class="name"/>
-            <br><br>
-            <p>age:</p>
             <br>
+            <p>age:</p>
             <input type="text" class="age"/>
           </div>
           <div class="modal-footer"> 
