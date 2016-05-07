@@ -35,6 +35,12 @@
       var studentCollection = db.collection('students');
       studentCollection.load(function(){
         var studentName =["Eugene","Kevin","Arthur","Aaron","Evan","Eunice","Wendy","Candy","Tom","Annie"];
+        var newStudent = {
+          name: studentName[Math.floor((Math.random() * 9) + 0)],
+          age:  Math.floor((Math.random() * 30) + 10)
+          };
+        studentCollection.insert(newStudent);			
+        studentCollection.save() 
         refresh()
       });
       $("body").on("click",".delete-button",function(){
@@ -53,12 +59,6 @@
             refresh();
           });
         });
-        // var newStudent = {
-            //   name: studentName[Math.floor((Math.random() * 9) + 0)],
-            //   age:  Math.floor((Math.random() * 30) + 10)
-            // };
-            // studentCollection.insert(newStudent);			
-            // studentCollection.save() 
       function refresh(){
         $("tbody *").remove();
          var students = studentCollection.find();
