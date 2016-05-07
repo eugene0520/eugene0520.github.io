@@ -49,8 +49,18 @@
       		var db = fdb.db("my_db");
       		var studentCollection = db.collection('students');
       		studentCollection.load(function(){
-        	var studentName =["Eugene","Kevin","Arthur","Aaron","Evan","Eunice","Wendy","Candy","Tom","Annie"];
-        	$("tbody *").remove();
+        	  var studentName =["Eugene","Kevin","Arthur","Aaron","Evan","Eunice","Wendy","Candy","Tom","Annie"];
+            refresh();
+          });
+        });
+        // var newStudent = {
+            //   name: studentName[Math.floor((Math.random() * 9) + 0)],
+            //   age:  Math.floor((Math.random() * 30) + 10)
+            // };
+            // studentCollection.insert(newStudent);			
+            // studentCollection.save() 
+      function refresh(){
+        $("tbody *").remove();
          var students = studentCollection.find();
           for(var i=0;i<students.length;i++){
             if(students[i].age>$(".find-input").val()){
@@ -71,35 +81,6 @@
             )
           }
         }
-        });
-        });
-      function refresh(){
-        $("tbody *").remove();
-        var students = studentCollection.find();
-        for(var i=0;i<students.length;i++){
-          $("tbody").append(
-            // var newStudent = {
-            //   name: studentName[Math.floor((Math.random() * 9) + 0)],
-            //   age:  Math.floor((Math.random() * 30) + 10)
-            // };
-            // studentCollection.insert(newStudent);			
-            // studentCollection.save() 
-           "<tr>"+
-            "<td id ='name"+i+"'>"+students[i].name+"</td>"+  
-            "<td id ='age"+i+"'>"+students[i].age+"</td>"+
-            "<td id ='id"+i+"'>"+students[i]._id+"</td>"+
-            "<td>"+
-            "<button type='button' id='"+i+"' class='btn btn-primary btn-lg edit-button' data-toggle='modal' data-target='#myModalN1'>"+
-            "修改"+
-            "</button>"+
-            "<button type='button' class='btn btn-primary btn-lg delete-button' data-id='"+students[i]._id+"'>"+
-            "刪除"+
-             "</button>"+
-             "</td>"+
-             "</tr>"
-          )
-        }
-      }
     </script>
     <!-- Modal 1 -->
     <div class="modal fade" id="myModalN1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
