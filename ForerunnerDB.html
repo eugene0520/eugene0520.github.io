@@ -45,6 +45,11 @@
         refresh();
       })
         $("body").on("click",".find-button",function(){
+        	var fdb = new ForerunnerDB();
+      		var db = fdb.db("my_db");
+      		var studentCollection = db.collection('students');
+      		studentCollection.load(function(){
+        	var studentName =["Eugene","Kevin","Arthur","Aaron","Evan","Eunice","Wendy","Candy","Tom","Annie"];
           for(var i=0;i<students.length;i++){
             if(student[i].age>$(".find-input").val()){
             $("tbody *").remove();
@@ -65,7 +70,8 @@
             )
           }
         }
-          });
+        });
+        });
       function refresh(){
         $("tbody *").remove();
         var students = studentCollection.find();
@@ -75,7 +81,7 @@
             //   name: studentName[Math.floor((Math.random() * 9) + 0)],
             //   age:  Math.floor((Math.random() * 30) + 10)
             // };
-            // studentCollection.insert(newStudent);
+            // studentCollection.insert(newStudent);			
             // studentCollection.save() 
            "<tr>"+
             "<td id ='name"+i+"'>"+students[i].name+"</td>"+  
