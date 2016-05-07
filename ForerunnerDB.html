@@ -5,6 +5,11 @@
     <script src="fdb-all.min.js"></script>  
     <script src="js/jquery-1.12.2.min.js"></script>  
     <script src="js/bootstrap.js"></script> 
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    
+  </div>
+</nav>
   </head>  
   <body>
   <table class="table">
@@ -34,12 +39,6 @@
         });
         studentCollection.save();
         refresh();
-      })
-      
-      $("body").on("click",".edit-button",function(){
-        alert("YA");
-        $(".name").val("name"+$(this).id)
-        $(".age").val($("age"+this).id)
       })
       function refresh(){
         $("tbody *").remove();
