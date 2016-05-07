@@ -38,7 +38,7 @@
       
       $("body").on("click",".edit-button",function(){
         alert("YA");
-        $(".name").val($("name"+this).id)
+        $(".name").val("name"+$(this).id)
         $(".age").val($("age"+this).id)
       })
       function refresh(){
