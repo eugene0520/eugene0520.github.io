@@ -61,10 +61,9 @@
         });
       function refresh(){
         $("tbody *").remove();
-         var students = studentCollection.find();
+         var students = studentCollection.find($gte:$(".find-input").val);
           for(var i=0;i<students.length;i++){
-            if(students[i].age>=$(".find-input").val()){
-            $("tbody").append(
+{            $("tbody").append(
               "<tr>"+
               "<td id ='name"+i+"'>"+students[i].name+"</td>"+  
               "<td id ='age"+i+"'>"+students[i].age+"</td>"+
