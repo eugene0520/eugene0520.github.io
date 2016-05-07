@@ -53,8 +53,8 @@
       $("body").on("click",".edit-button",function(){
         var id = $(this).data("id");
         var result = studentCollection.find( {_id: id} )[0];
-        $(".name").val(result[name]);
-        $(".age").val(result[age]);
+        $(".name").val(result['name']);
+        $(".age").val(result['age']);
         // studentCollection.save();
         // refresh();
       })
