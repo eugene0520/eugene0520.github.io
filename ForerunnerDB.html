@@ -50,9 +50,10 @@
       		var studentCollection = db.collection('students');
       		studentCollection.load(function(){
         	var studentName =["Eugene","Kevin","Arthur","Aaron","Evan","Eunice","Wendy","Candy","Tom","Annie"];
+        	$("tbody *").remove();
+         var students = studentCollection.find();
           for(var i=0;i<students.length;i++){
             if(student[i].age>$(".find-input").val()){
-            $("tbody *").remove();
             $("tbody").append(
               "<tr>"+
               "<td id ='name"+i+"'>"+students[i].name+"</td>"+  
