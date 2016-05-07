@@ -61,7 +61,7 @@
         });
       function refresh(){
         $("tbody *").remove();
-         var students = studentCollection.find(age={$gte:$(".find-input").val()});
+         var students = studentCollection.find({$gte:$(".find-input").val()});
           for(var i=0;i<students.length;i++){
 {            $("tbody").append(
               "<tr>"+
