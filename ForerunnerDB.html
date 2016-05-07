@@ -32,8 +32,13 @@
         studentCollection.remove({  
           _id:$(this).data("id")
         });
-          studentCollection.save();
-          refresh();
+        studentCollection.save();
+        refresh();
+      })
+      
+      $("body").on("click",".edit-button",function(){
+        $(".name").val($("name"+this).id)
+        $(".age").val($("age"+this).id)
       })
       function refresh(){
         $("tbody *").remove();
@@ -51,7 +56,7 @@
             "<td id ='age"+i+"'>"+students[i].age+"</td>"+
             "<td id ='id"+i+"'>"+students[i]._id+"</td>"+
             "<td>"+
-            "<button type='button' class='btn btn-primary btn-lg edit-button' data-toggle='modal' data-target='#myModalN1'>"+
+            "<button type='button' id='"+i+"' class='btn btn-primary btn-lg edit-button' data-toggle='modal' data-target='#myModalN1'>"+
             "修改"+
             "</button>"+
             "<button type='button' class='btn btn-primary btn-lg delete-button' data-id='"+students[i]._id+"'>"+
@@ -74,11 +79,11 @@
           <div class="modal-body">
             <p>Name:</p>
             <br>
-            <input type="text" val= />
+            <input type="text" class="name"/>
             <br><br>
             <p>age:</p>
             <br>
-            <input type="text" val= />
+            <input type="text" class="age"/>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
