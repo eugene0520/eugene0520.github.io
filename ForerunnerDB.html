@@ -50,6 +50,14 @@
         studentCollection.save();
         refresh();
       })
+      $("body").on("click",".edit-button",function(){
+        var id = $(this).data("id");
+        var result = studentCollection.find( {_id: id} )[0];
+        $(".name").val(result[name]);
+        $(".age").val(result[age]);
+        // studentCollection.save();
+        // refresh();
+      })
         $("body").on("click",".find-button",function(){
         	var fdb = new ForerunnerDB();
       		var db = fdb.db("my_db");
@@ -73,7 +81,7 @@
               "<td id ='age"+i+"'>"+students[i].age+"</td>"+
               "<td id ='id"+i+"'>"+students[i]._id+"</td>"+
               "<td>"+
-              "<button type='button' class='btn btn-primary btn-lg edit-button' data-toggle='modal' data-target='#myModalN1'>"+
+              "<button type='button' class='btn btn-primary btn-lg edit-button' data-toggle='modal' data-target='#myModalN1' data-id='"+students[i]._id+"'>"+
               "修改"+
               "</button>"+
               "<button type='button' class='btn btn-primary btn-lg delete-button' data-id='"+students[i]._id+"'>"+
@@ -92,7 +100,7 @@
        <div class="modal-content">
           <div class="modal-header">
            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-           <h4 class="修改" id="myModalLabel">Modal title</h4>
+           <h4 class="modal-title" id="myModalLabel">Modal title</h4>
           </div>
           <div class="modal-body">
             <p>Name:</p>
