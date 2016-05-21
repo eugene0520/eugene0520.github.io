@@ -89,7 +89,7 @@
         
         parentCollection.load(function(){
           var result = parentCollection.find(); 
-          for(var i;i<result.length;i++){
+          for(var i=0;i<result.length;i++){
             $("#parent-id").append(
               "<option value='"+result[i]._id+"'>"+result[i].name+"</option>"
             )
