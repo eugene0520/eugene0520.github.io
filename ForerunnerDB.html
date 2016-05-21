@@ -86,6 +86,16 @@
           $(".b-class").prop( "checked" )
           $(".c-class").prop( "checked" )
         })
+        
+        parentCollection.load(function(){
+          var result = parentCollection.find(); 
+          for(var i;i<result.length;i++){
+            $("#parent-id").append(
+              "<option value='"+result[i]._id+"'>"+result[i].name+"</option>
+            )
+          }
+        })
+        
       function refresh(){
         $("tbody *").remove();
           var students = studentCollection.find({
