@@ -31,6 +31,7 @@
                 <td>name</td>
                 <td>age</td>
                 <td>id</td>
+                <td>班級</td>
                 <td>操作</td>
             </tr>
         </thead>
@@ -72,21 +73,21 @@
         // refresh();
       })
         $("body").on("click",".find-button",function(){
-        	var fdb = new ForerunnerDB();
-      		var db = fdb.db("my_db");
-      		var studentCollection = db.collection('students');
-      		studentCollection.load(function(){
-        	  var studentName =["Eugene","Kevin","Arthur","Aaron","Evan","Eunice","Wendy","Candy","Tom","Annie"];
-            refresh();
-          });
-        });
-        $("body").on("click","checkbox",function(){
+        // 	var fdb = new ForerunnerDB();
+      		// var db = fdb.db("my_db");
+      		// var studentCollection = db.collection('students');
+      		// studentCollection.load(function(){
+        // 	  var studentName =["Eugene","Kevin","Arthur","Aaron","Evan","Eunice","Wendy","Candy","Tom","Annie"];
+        //     refresh();
+        //   });
           var findclass = [];
-          $(".a-class").prop( "checked" )
-          $(".b-class").prop( "checked" )
-          $(".c-class").prop( "checked" )
-        })
-        
+          if($(".a-class").prop("checked")){findclass.push("甲")}
+          if($(".b-class").prop("checked")){findclass.push("乙")}
+          if($(".c-class").prop("checked")){findclass.push("丙")}
+          studentCollection.find({findclass})
+        });
+
+          
         parentCollection.load(function(){
           var result = parentCollection.find(); 
           for(var i=0;i<result.length;i++){
@@ -109,6 +110,7 @@
               "<td id ='name"+i+"'>"+students[i].name+"</td>"+  
               "<td id ='age"+i+"'>"+students[i].age+"</td>"+
               "<td id ='id"+i+"'>"+students[i]._id+"</td>"+
+              "<td id ='class"+i+"'>"+students[i].Class+"</td>"+
               "<td>"+
               "<button type='button' class='btn btn-primary btn-lg edit-button' data-toggle='modal' data-target='#myModalN1' data-id='"+students[i]._id+"'>"+
               "修改"+
