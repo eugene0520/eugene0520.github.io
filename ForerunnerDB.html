@@ -41,8 +41,8 @@
       var fdb = new ForerunnerDB();
       var db = fdb.db("my_db");
       var studentCollection = db.collection('students');
-      var studentCollection = db.collection('parents');
-      var studentCollection = db.collection('teachers');
+      var parentCollection = db.collection('parents');
+      var teacherCollection = db.collection('teachers');
       studentCollection.load(function(){
         var studentName = ["Eugene","Kevin","Arthur","Aaron","Evan","Eunice","Wendy","Candy","Tom","Annie"];
         var studentClass = ["甲","乙","丙"]
