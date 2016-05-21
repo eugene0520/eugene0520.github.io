@@ -77,7 +77,7 @@
             refresh();
           });
         });
-        $(body).on("click","checkbox",function(){
+        $("body").on("click","checkbox",function(){
           var findclass = [];
           $(".a-class").prop( "checked" )
           $(".b-class").prop( "checked" )
@@ -119,12 +119,23 @@
            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
           </div>
           <div class="modal-body">
-            <p>Name:</p>
+            Name:
             <input type="text" class="name"/>
             <br>
-            <br>
-            <p>age:</p>
+            age:
             <input type="text" class="age"/>
+            parent:
+            <select id="parent-id">
+             <option value="">請選擇家長</option>
+              <option value="1beda312sd">Orange</option>
+              <option value="5b23fs45hj">Apple</option>
+            </select>
+            teacher:
+            <select id="parent-id">
+             <option value="">請選擇老師</option>
+              <option value="1beda312sd">Orange</option>
+              <option value="5b23fs45hj">Apple</option>
+            </select>
           </div>
           <div class="modal-footer"> 
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
