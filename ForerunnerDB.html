@@ -86,12 +86,37 @@
           if($(".c-class").prop("checked")){findclass.push("丙")}
           console.log(findclass);
           var result = studentCollection.find({
+
+          });
+          console.log(result)
+          $("tbody *").remove();
+          var students = studentCollection.find({
+            age: {
+              $gte:$(".find-input").val()
+            }
             class: {
               $in: findclass
             }
           });
-          console.log(result)
-        });
+          for(var i=0;i<students.length;i++){
+            $("tbody").append(
+              "<tr>"+
+              "<td id ='name"+i+"'>"+students[i].name+"</td>"+  
+              "<td id ='age"+i+"'>"+students[i].age+"</td>"+
+              "<td id ='id"+i+"'>"+students[i]._id+"</td>"+
+              "<td id ='class"+i+"'>"+students[i].class+"</td>"+
+              "<td>"+
+              "<button type='button' class='btn btn-primary btn-lg edit-button' data-toggle='modal' data-target='#myModalN1' data-id='"+students[i]._id+"'>"+
+              "修改"+
+              "</button>"+
+              "<button type='button' class='btn btn-primary btn-lg delete-button' data-id='"+students[i]._id+"'>"+
+              "刪除"+
+              "</button>"+
+              "</td>"+
+              "</tr>"
+            )
+          }
+        }
 
           
         parentCollection.load(function(){
@@ -111,7 +136,7 @@
             }
           });
           for(var i=0;i<students.length;i++){
-{            $("tbody").append(
+            $("tbody").append(
               "<tr>"+
               "<td id ='name"+i+"'>"+students[i].name+"</td>"+  
               "<td id ='age"+i+"'>"+students[i].age+"</td>"+
@@ -129,7 +154,6 @@
             )
           }
         }
-      }
     </script>
     <!-- Modal 1 -->
     <div class="modal fade" id="myModalN1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
