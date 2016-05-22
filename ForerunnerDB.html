@@ -93,9 +93,9 @@
           var students = studentCollection.find({
             age: {
               $gte:$(".find-input").val()
-            }
+            },
             class: {
-              $in: findclass
+              $in:findclass
             }
           });
           for(var i=0;i<students.length;i++){
