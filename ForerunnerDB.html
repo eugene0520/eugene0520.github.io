@@ -75,6 +75,7 @@
           newData.age = $(".age").val();
           db.collection("students").updateById(id,newData);
           studentCollection.save();
+          refresh();
         })
       })
         
