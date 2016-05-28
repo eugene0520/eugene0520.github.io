@@ -73,7 +73,7 @@
           var newData = {};
           newData.name = $(".name").val();
           newData.age = $(".age").val();
-          db.collection("students").updateById("1",newData);
+          db.collection("students").updateById(id,newData);
         })
       })
         
