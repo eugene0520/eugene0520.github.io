@@ -67,7 +67,7 @@
       })
       $("body").on("click",".edit-button",function(){
         updateId = $(this).data("id");
-        var result = studentCollection.find( {_id: id} )[0];
+        var result = studentCollection.find( {_id: updateId} )[0];
         $(".name").val(result['name']);
         $(".age").val(result['age']);
         
