@@ -45,6 +45,7 @@
       var studentCollection = db.collection('students');
       var parentCollection = db.collection('parents');
       var teacherCollection = db.collection('teachers');
+      var updateId;
       studentCollection.load(function(){
         var studentName = ["Eugene","Kevin","Arthur","Aaron","Evan","Eunice","Wendy","Candy","Tom","Annie"];
         var studentClass = ["甲","乙","丙"]
@@ -65,20 +66,20 @@
         refresh();
       })
       $("body").on("click",".edit-button",function(){
-        var id = $(this).data("id");
+        updateId = $(this).data("id");
         var result = studentCollection.find( {_id: id} )[0];
         $(".name").val(result['name']);
         $(".age").val(result['age']);
-        $("body").on("click",".save-button",function(){
-          var newData = {};
-          newData.name = $(".name").val();
-          newData.age = $(".age").val();
-          db.collection("students").updateById(id,newData);
-          studentCollection.save();
-          refresh();
-        })
-      })
         
+      })
+      $("body").on("click",".save-button",function(){
+        var newData = {};
+        newData.name = $(".name").val();
+        newData.age = $(".age").val();
+        db.collection("students").updateById(updateId,newData);
+        studentCollection.save();
+        refresh();
+      })
         $("body").on("click",".find-button",function(){
         // 	var fdb = new ForerunnerDB();
       		// var db = fdb.db("my_db");
