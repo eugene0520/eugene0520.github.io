@@ -74,7 +74,7 @@
           newData.name = $(".name").val(result['name']);
           newData.age = $(".age").val(result['age']);
           DB.collection("students").updateById("1",newData);
-        }
+        })
       })
         
         $("body").on("click",".find-button",function(){
