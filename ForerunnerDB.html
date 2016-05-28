@@ -71,9 +71,9 @@
         $(".age").val(result['age']);
         $("body").on("click",".save-button",function(){
           var newData = {};
-          newData.name = $(".name").val(result['name']);
-          newData.age = $(".age").val(result['age']);
-          student.collection("students").updateById("1",newData);
+          newData.name = $(".name").val();
+          newData.age = $(".age").val();
+          db.collection("students").updateById("1",newData);
         })
       })
         
